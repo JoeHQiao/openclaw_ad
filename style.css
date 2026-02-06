@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-color: #050511;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --primary-gradient: linear-gradient(135deg, #00C6FF 0%, #0072FF 100%);
+    --accent-gold: #FFD700;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B7C3;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --glass-blur: 20px;
+    --padding-container: 24px;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Scroll Snapping */
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+/* Utilities */
+section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 80px 0;
+    /* Fallback padding */
+}
+
+/* Ensure container doesn't break flex centering */
+section>.container {
+    width: 100%;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-container);
+}
+
+.text-gradient {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.btn-cta {
+    display: inline-block;
+    background: var(--primary-gradient);
+    color: white;
+    padding: 16px 48px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 114, 255, 0.4);
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 114, 255, 0.6);
+}
+
+/* Header / Banner */
+.hero {
+    /* position: relative; removed in favor of generic section */
+    /* padding: 120px 0 80px; removed */
+    text-align: center;
+    background: radial-gradient(circle at 50% 20%, rgba(0, 114, 255, 0.15) 0%, transparent 50%);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.hero p.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 48px;
+}
+
+/* Core Highlights */
+/* .highlights padding removed */
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    backdrop-filter: blur(var(--glass-blur));
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 114, 255, 0.3);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: #00C6FF;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+}
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Dual Audience Section */
+.audience {
+    padding: 100px 0;
+}
+
+.audience-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.audience-col {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border-radius: 24px;
+    padding: 48px 40px;
+    border: 1px solid var(--border-color);
+}
+
+.audience-col h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.audience-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+}
+
+.feature-list {
+    list-style: none;
+}
+
+.feature-list li {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.feature-list li::before {
+    content: "✅";
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+/* Installation Benefits */
+.installation {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.installation h2 {
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+}
+
+.install-grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.install-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    text-align: left;
+    padding: 24px;
+    border-radius: 12px;
+    background: var(--card-bg);
+}
+
+.install-num {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.05);
+    line-height: 1;
+    margin-bottom: -20px;
+    display: block;
+}
+
+.install-item h3 {
+    position: relative;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: #00C6FF;
+}
+
+/* CTA */
+.cta-section {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+}
+
+.cta-subtext {
+    margin-top: 16px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+footer strong {
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audience-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 80px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+
+    .hero p.subtitle {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    .btn-cta {
+        width: 100%;
+        padding: 16px;
+        font-size: 1.1rem;
+    }
+
+    .audience-col {
+        padding: 32px 24px;
+    }
+
+    .install-grid {
+        flex-direction: column;
+    }
+
+    .install-item {
+        max-width: 100%;
+    }
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    /* Added scale for depth */
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* Smoother easing */
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Stagger animations for children when parent is active */
+.reveal-child {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+section.active .reveal-child {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific Stagger Delays for children */
+section.active .reveal-child:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+section.active .reveal-child:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+section.active .reveal-child:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+section.active .reveal-child:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}

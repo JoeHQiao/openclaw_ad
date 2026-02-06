@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw · 老板私人AI助理</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. Header/Banner -->
+    <section class="hero reveal active">
+        <div class="container">
+            <h1>OpenClaw · <span class="text-gradient">老板私人AI助理</span> <br>上门即装即用</h1>
+            <p class="subtitle">不用自己折腾，专业上门部署，省心掌全局</p>
+            <a href="#cta" class="btn-cta">立即预约 · 上门安装</a>
+        </div>
+    </section>
+
+    <!-- 2. Core Highlights -->
+    <section class="highlights reveal">
+        <div class="container">
+            <div class="highlights-grid">
+                <div class="card reveal-child">
+                    <div class="card-icon">🧠</div>
+                    <h3>私人AI助理</h3>
+                    <p>老板专属私人AI助理，琐事全代劳，省心省时间</p>
+                </div>
+                <div class="card reveal-child">
+                    <div class="card-icon">🛠️</div>
+                    <h3>专业上门安装</h3>
+                    <p>专业上门安装调试，一步到位，装完直接用</p>
+                </div>
+                <div class="card reveal-child">
+                    <div class="card-icon">🔒</div>
+                    <h3>本地部署保隐私</h3>
+                    <p>本地部署保隐私，办公决策更高效，无需费心折腾</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Dual Audience -->
+    <section class="audience reveal">
+        <div class="container">
+            <div class="audience-container">
+                <!-- Boss Section -->
+                <div class="audience-col reveal-child">
+                    <span class="audience-tag">老板专属</span>
+                    <h2>核心：省心、掌全局</h2>
+                    <ul class="feature-list">
+                        <li>你的私人AI助理，替你打理所有办公琐碎</li>
+                        <li>上门安装不耽误办公，不用自己学、不用自己弄</li>
+                        <li>聚焦核心决策，琐事全交AI，轻松掌全局</li>
+                    </ul>
+                </div>
+
+                <!-- White Collar Section -->
+                <div class="audience-col reveal-child">
+                    <span class="audience-tag">白领专属</span>
+                    <h2>核心：省琐事、不加班</h2>
+                    <ul class="feature-list">
+                        <li>杂活全交AI，报表、邮件一键搞定，告别加班</li>
+                        <li>上门装完即用，不用学操作、不用费精力</li>
+                        <li>高效办公不内卷，把时间还给生活</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Installation Benefits -->
+    <section class="installation reveal">
+        <div class="container">
+            <h2 class="reveal-child">为什么选择上门安装？</h2>
+            <div class="install-grid">
+                <div class="install-item reveal-child">
+                    <span class="install-num">01</span>
+                    <h3>上门服务</h3>
+                    <p>专业人员上门，全程不用你动手</p>
+                </div>
+                <div class="install-item reveal-child">
+                    <span class="install-num">02</span>
+                    <h3>快速部署</h3>
+                    <p>半小时搞定，装完直接上手使用</p>
+                </div>
+                <div class="install-item reveal-child">
+                    <span class="install-num">03</span>
+                    <h3>售后省心</h3>
+                    <p>上门调试+专属指导，有问题随时响应</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <a href="#" class="btn-cta">立即预约 · 上门安装，解锁专属AI助理</a>
+            <p class="cta-subtext">省心、高效、保隐私，一键开启轻松办公模式</p>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer>
+        <div class="container">
+            <p><strong>OpenClaw</strong> —— 老板的私人AI助理，白领的办公神器，上门即装，省心随行</p>
+            <br>
+            <p style="opacity: 0.6; font-size: 0.85rem;">专业上门部署 · 本地隐私保障 · 高效办公不折腾</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
